@@ -1,0 +1,49 @@
+/* Variables */
+
+:root {
+}
+
+
+/* General Defaults */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--primary-body-font);
+    min-width: 200px;
+    min-height: 100svh;
+}
+
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+
+/* Backgrounds */
+
+body {
+    background-color: black;
+}
+
+/* Layouts */
+
+
+/* Elements */
+
+
+/* Header and Footer */
+
+footer {
+    margin-top: auto;
+}
