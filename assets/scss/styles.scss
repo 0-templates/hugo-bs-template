@@ -6,7 +6,7 @@ $ultra-violet: #50537aff;
 
 $body-bg: #212529;
 $body-color: #FFF;
-$primary: $caramel;
+$primary: $falu-red;
 $secondary: $ultra-violet;
 
 @import "bootstrap/scss/bootstrap";
@@ -16,4 +16,8 @@ $secondary: $ultra-violet;
     @extend .navbar-expand-lg;
     @extend .navbar-dark;
     @extend .bg-secondary;
+}
+
+.my-class {
+    color: red;
 }

@@ -3,7 +3,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     {{ $sass := resources.Get "scss/styles.scss" }}
-    {{ $options := (dict "includePaths" "node_modules") }}
-    {{ $style := $sass | resources.ToCSS $options }}
+    {{ $toCssOpt := (dict "includePaths" "node_modules") }}
+    {{ $postCssOpt := (dict "use" "autoprefixer") }}
+    {{ $style := $sass | toCSS $toCssOpt | postCSS $postCssOpt }}
     <link href="{{ $style.RelPermalink }}" rel="stylesheet">
 </head>
