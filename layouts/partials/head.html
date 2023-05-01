@@ -2,5 +2,8 @@
     <title>{{ if not .IsHome }}{{ .Page.Title }} - {{ end }}{{ .Site.Title }}</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="/css/styles.css" rel="stylesheet">
+    {{ $sass := resources.Get "scss/styles.scss" }}
+    {{ $options := (dict "includePaths" "node_modules") }}
+    {{ $style := $sass | resources.ToCSS $options }}
+    <link href="{{ $style.RelPermalink }}" rel="stylesheet">
 </head>
