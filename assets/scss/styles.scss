@@ -1,23 +1,5 @@
-$falu-red: #772014ff;
-$bistre: #3f220fff;
-$smoky-black: #19180aff;
-$caramel: #dc7f38ff;
-$ultra-violet: #50537aff;
-
 $body-bg: #212529;
 $body-color: #FFF;
-$primary: $caramel;
-$secondary: $ultra-violet;
 
 @import "bootstrap/scss/bootstrap";
 
-.my-navbar {
-    @extend .navbar;
-    @extend .navbar-expand-lg;
-    @extend .navbar-dark;
-    @extend .bg-secondary;
-}
-
-.my-class {
-    color: red;
-}

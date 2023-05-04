@@ -1,7 +1,7 @@
 {
-  "name": "npm-hugo-bs",
+  "name": "hugo-bs-template",
   "version": "1.0.0",
-  "description": "A test of using npm to install hugo and bootstrap",
+  "description": "A template for a website using bootstrap and hugo.",
   "main": "index.js",
   "scripts": {
     "build": "npm run hugo:build",
