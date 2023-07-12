@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 {{ "<!-- layouts/_default/baseof.html -->" | safeHTML }}
-<html>
+<html lang="en" data-bs-theme="dark">
     {{ partial "head.html" . }}
     <body>
-        <header>
-            {{ partial "header.html" . }}
-        </header>
-        <main>
+        {{ partial "header.html" . }}
+        <main class="mb-4">
             {{ block "main" . }}{{ end }}
         </main>
-        <footer>
-            {{ partial "footer.html" . }}
-        </footer>
+        {{ partial "footer.html" . }}
     </body>
 </html>
-

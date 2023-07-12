@@ -1,5 +1,32 @@
-<nav class="header-nav">
-    <ul>
-        <li><a class="nav-button" href="/">Home</a></li>
-    </ul>
-</nav>
+<header class="bg-black p-md-1">
+    <nav class="navbar navbar-expand-md">
+        <div class="container-xxl d-flex align-items-center">
+            <a class="navbar-brand" href="/">
+                <span class="h2 p-2 m-0 text-body">
+                    New Hugo Site
+                </span>
+            </a>
+            <button 
+                class="navbar-toggler" 
+                type="button" 
+                data-bs-toggle="collapse" 
+                data-bs-target="#navbarSupportedContent" 
+                aria-controls="navbarSupportedContent" 
+                aria-expanded="false" 
+                aria-label="Toggle navigation"
+            >
+                <span class="navbar-toggler-icon text-primary"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav nav-underline">
+                    {{ $currentSection := .Section }}
+                    {{ range .Site.Menus.main }}
+                        <li class="nav-item text-center">
+                            <a class="nav-link{{ if eq $currentSection .Page.Section }} active{{ end }}" href="{{ .URL }}">{{ .Title }}</a>
+                        </li>
+                    {{ end }}
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
