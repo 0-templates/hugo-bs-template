@@ -1,1 +1,21 @@
-This site was created by <a href="https://ssweb.services">SS Web Services</a>
+<footer class="bg-dark-subtle py-3">
+    <div class="container-xxl">
+        <div class="row flex-row-reverse p-3 text-body-secondary gx-5">
+            <div class="col-md-6 d-flex flex-column">
+                <h4 class="text-body">Contact</h4>
+                <span>Call or text: 
+                    <a href="tel:{{ replaceRE `[^\d]` `` .Site.Params.primPhone }}">
+                        {{ .Site.Params.primPhone }}
+                    </a></span>
+                <span class="mt-2">Email: 
+                    <a href="mailto:{{ .Site.Params.primEmail }}">
+                        {{ .Site.Params.primEmail }}
+                    </a>
+                </span>
+            </div>
+            <div class="col-md-6 d-flex flex-column justify-content-center align-items-center align-items-md-start">
+                {{ partial "created-by" . }}
+            </div>
+        </div>
+    </div>
+</footer>

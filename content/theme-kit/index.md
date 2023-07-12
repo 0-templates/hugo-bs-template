@@ -1,5 +1,6 @@
 ---
-title: theme-kit
+title: Theme kit
+menu: main
 ---
 <nav class="navbar navbar-expand-lg navbar-light bg-primary">
     <div class="container-fluid">

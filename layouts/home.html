@@ -1,12 +1,16 @@
 {{ define "main" }}
     {{"<!-- layouts/home.html -->" | safeHTML }}
-    <h1>Welcome to your new Hugo Site!</h1>
-    {{ range .Site.Sections }}
-        <h2>{{ .Title }}</h2>
-        <ul>
-            {{ range .Pages }}
-            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    <section class="prim-sec">
+        <div class="prim-cont">
+            <h1>Welcome to your new Hugo Site!</h1>
+            {{ range .Site.Sections }}
+                <h2>{{ .Title }}</h2>
+                <ul>
+                    {{ range .Pages }}
+                    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+                    {{ end }}
+                </ul>
             {{ end }}
-        </ul>
-    {{ end }}
+        </div>
+    </section>
 {{ end }}

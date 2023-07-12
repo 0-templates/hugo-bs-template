@@ -1,0 +1,8 @@
+{{ $img := .Page.Resources.Get .Destination }}
+{{ $img := $img.Fit "1200x1200 webp" }}
+<div class="markdown-img-wrapper">
+    <img src="{{ $img.RelPermalink }}" alt="{{ .Text }}"/>
+    {{ with .Title }}
+        <span class="p-2">{{ . | markdownify }}</span>
+    {{ end }}
+</div>

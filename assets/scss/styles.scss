@@ -1,5 +1,148 @@
-$body-bg: #212529;
-$body-color: #FFF;
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import "../node_modules/bootstrap/scss/functions";
 
-@import "bootstrap/scss/bootstrap";
+// 2. Include any default variable overrides here
+$body-color-dark: #FFF;
+
+$primary: blue;
+$secondary: orange;
+
+$code-color: #48E91D;
+
+// 3. Include remainder of required Bootstrap stylesheets (including any separate color mode stylesheets)
+@import "../node_modules/bootstrap/scss/variables";
+@import "../node_modules/bootstrap/scss/variables-dark";
+
+// 4. Include any default map overrides here
+
+// 5. Include remainder of required parts
+@import "../node_modules/bootstrap/scss/maps";
+@import "../node_modules/bootstrap/scss/mixins";
+@import "../node_modules/bootstrap/scss/root";
+
+// 6. Optionally include any other parts as needed
+@import "../node_modules/bootstrap/scss/utilities";
+@import "../node_modules/bootstrap/scss/reboot";
+@import "../node_modules/bootstrap/scss/type";
+@import "../node_modules/bootstrap/scss/images";
+@import "../node_modules/bootstrap/scss/containers";
+@import "../node_modules/bootstrap/scss/grid";
+@import "../node_modules/bootstrap/scss/helpers";
+@import "../node_modules/bootstrap/scss/buttons";
+@import "../node_modules/bootstrap/scss/navbar";
+@import "../node_modules/bootstrap/scss/nav";
+
+// 7. Optionally include utilities API last to generate classes based on the Sass map in `_utilities.scss`
+$utilities: map-merge(
+  $utilities,
+  (
+    "font-size": map-merge(
+      map-get($utilities, "font-size"),
+    (responsive: true),
+    ),
+  )
+);
+
+@import "../node_modules/bootstrap/scss/utilities/api";
+@import "../node_modules/bootstrap/scss/bootstrap";
+$bootstrap-icons-font-src: url('/node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff2') format("woff2"), url('/node_modules/bootstrap-icons/font/fonts/bootstrap-icons.woff') format('woff');
+@import "../node_modules/bootstrap-icons/font/bootstrap-icons.scss";
+
+// 8. Add additional custom code here
+
+// start template styles ++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+.prim-sec {
+    @extend .py-md-5;
+    @extend .py-2;
+}
+
+.prim-cont {
+    @extend .container-xxl;
+    @extend .d-md-flex;
+}
+
+main > section:nth-child(even) {
+    @extend .bg-dark-subtle;
+}
+
+.show .navbar-nav > li {
+    border-bottom: 1px solid $gray-900;
+}
+
+.text-emphasis-1 {
+    @extend .text-primary;
+    font-weight: bold;
+}
+
+// start global styles ++++++++++++
+
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    min-height: 100svh;
+    display: flex;
+    flex-direction: column;
+}
+
+footer {
+    margin-top: auto;
+}
+
+// end global styles ---------------
+
+// start markdown styles ++++++++++++++++++
+
+article.markdown {
+    @extend .bg-dark-subtle;
+    @extend .p-4;
+    @extend .fs-5;
+    max-width: Min(100%, 1000px);
+    line-height: 2.2rem;
+}
+
+article.markdown img {
+    max-height: 800px;
+    max-width: Min(1200px, 100%);
+    width: auto;
+}
+
+.markdown-img-wrapper {
+    max-width: Min(1200px, 100%);
+    width: fit-content;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    @extend .me-md-4;
+    @extend .mb-4;
+    @extend .d-flex;
+    @extend .flex-column;
+    @extend .align-items-center;
+    @extend .text-body-secondary;
+    @extend .fs-6;
+}
+
+article.markdown p {
+    @extend .text-body-secondary;
+}
+
+// inline `code` snippets
+p > code {
+    background-color: black;
+    padding: 0.3rem;
+    border-radius: 0.4rem;
+}
+
+// ```code``` blocks
+pre {
+    padding: 0.5rem;
+    padding-left: 1rem;
+    border-radius: 1rem;
+}
+
+// end markdown styles -------------
+
+// end template styles --------------------------------------------------------
 

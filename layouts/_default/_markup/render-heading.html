@@ -1,0 +1,3 @@
+<!-- this moves markdown headings down a level so they are semantically correct -->
+{{ $newLevel := math.Min (add .Level 1) 6 }}
+<h{{ $newLevel }}>{{ .Text | safeHTML }}</h{{ $newLevel }}>

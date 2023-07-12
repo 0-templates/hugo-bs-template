@@ -1,4 +1,8 @@
-title = 'My New Hugo Site'
+title = 'Hugo-BS Temp'
+
+[params]
+    primEmail = "info@example.com"
+    primPhone = "(123) 456-7890"
 
 [markup]
     [markup.goldmark]
