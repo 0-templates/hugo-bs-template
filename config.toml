@@ -1,4 +1,5 @@
 title = 'Hugo-BS Temp'
+baseURL = ''
 
 [params]
     primEmail = "info@example.com"
@@ -10,3 +11,16 @@ title = 'Hugo-BS Temp'
             wrapStandAloneImageWithinParagraph = false
     [markup.goldmark.renderer]
          unsafe = true
+    [markup.highlight]
+        style = "modus-vivendi"
+
+[module]
+    [[module.mounts]]
+        source="static"
+        target="static"
+    [[module.mounts]]
+        source="node_modules"
+        target="static/node_modules"
+    [[module.mounts]]
+        source="favicon"
+        target="static"
