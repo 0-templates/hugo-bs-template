@@ -1,0 +1,47 @@
+# use local server when served on localhost
+# need to have decap-server npm package installed and running for this to work
+local_backend: true
+backend:
+  name: git-gateway
+  branch: main # Branch to update (optional; defaults to master)
+# logo_url:
+# display_url:
+media_folder: static/img
+  # media_library:
+  # name: 'disabled' # To disable the media library
+public_folder: /img
+collections:
+  - name: 'config'
+    label: 'Site Config'
+    editor:
+      preview: false
+    files:
+      - name: 'config'
+        label: 'Contact Info'
+        file: 'config.toml'
+        format: 'toml'
+        fields: 
+        - { label: 'Contact Info',
+            name: 'params',
+            widget: 'object',
+            fields: [
+              { label: 'First Name', name: 'firstName', widget: 'string' },
+              { label: 'Last Name', name: 'lastName', widget: 'string' },
+              { label: 'Email', name: 'primEmail', widget: 'string' },
+              { label: 'Phone Number', name: 'primPhone', widget: 'string' },
+            ],
+          }
+      - name: 'homePage'
+        label: 'Home Page'
+        file: 'content/_index.md'
+        fields: 
+        - { label: 'Pitch',
+            name: 'pitch',
+            widget: 'text',
+            hint: 'This is the text in the Work With Me section'
+          }
+        - { label: 'Tagline',
+            name: 'tagline',
+            widget: 'text',
+            hint: "This is the text at the top of the page underneath \"Hello, I'm Rocky Hutchins\", and is also used to generate the meta description of the site which is what shows up in the preview on google, so you should keep it as a list of what you are. The meta description is created by taking this text and prefixing \"Rocky Hutchins is a professional\" to it."
+          }

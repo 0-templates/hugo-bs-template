@@ -1,26 +1,35 @@
-title = 'Hugo-BS Temp'
-baseURL = ''
+title = "Hugo-BS Temp"
+baseURL = ""
 
 [params]
-    primEmail = "info@example.com"
-    primPhone = "(123) 456-7890"
+primEmail = "info@example.com"
+primPhone = "(212) 345-6789"
+firstName = "John"
+lastName = "Smith"
 
 [markup]
-    [markup.goldmark]
-        [markup.goldmark.parser]
-            wrapStandAloneImageWithinParagraph = false
-    [markup.goldmark.renderer]
-         unsafe = true
-    [markup.highlight]
-        style = "modus-vivendi"
+
+[markup.goldmark]
+
+[markup.goldmark.parser]
+wrapStandAloneImageWithinParagraph = false
+
+[markup.goldmark.renderer]
+unsafe = true
+
+[markup.highlight]
+style = "modus-vivendi"
 
 [module]
-    [[module.mounts]]
-        source="static"
-        target="static"
-    [[module.mounts]]
-        source="node_modules"
-        target="static/node_modules"
-    [[module.mounts]]
-        source="favicon"
-        target="static"
+
+[[module.mounts]]
+source = "static"
+target = "static"
+
+[[module.mounts]]
+source = "node_modules"
+target = "static/node_modules"
+
+[[module.mounts]]
+source = "favicon"
+target = "static"
