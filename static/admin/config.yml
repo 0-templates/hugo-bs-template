@@ -35,13 +35,7 @@ collections:
         label: 'Home Page'
         file: 'content/_index.md'
         fields: 
-        - { label: 'Pitch',
-            name: 'pitch',
+        - { label: 'Summary',
+            name: 'summary',
             widget: 'text',
-            hint: 'This is the text in the Work With Me section'
-          }
-        - { label: 'Tagline',
-            name: 'tagline',
-            widget: 'text',
-            hint: "This is the text at the top of the page underneath \"Hello, I'm Rocky Hutchins\", and is also used to generate the meta description of the site which is what shows up in the preview on google, so you should keep it as a list of what you are. The meta description is created by taking this text and prefixing \"Rocky Hutchins is a professional\" to it."
           }
