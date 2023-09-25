@@ -33,3 +33,7 @@ target = "static/node_modules"
 [[module.mounts]]
 source = "favicon"
 target = "static"
+
+[build]
+writeStats = true
+

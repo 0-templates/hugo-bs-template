@@ -3,5 +3,10 @@ This file is to provide documentation for the template repo (can be deleted when
 After cloning this repo, run `npm i` to install everything.
 
 
+Todo: 
+set up purgecss
+check scss
+head - purgecss, bootstrap, remove gtag
+
 
 Possibly in the future, would it be a good idea to move hugo into its own directory to keep things more organized?
