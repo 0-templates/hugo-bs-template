@@ -1,35 +1,29 @@
-<head>
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <!-- Title and Description -->
-    <title>{{ if not .IsHome }}{{ .Page.Title }} - {{ end }}{{ .Site.Title }}</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="{{ .Site.Title }}: {{ .Title }}{{ with .Summary }} - {{ . }}{{ end }}">
+<!-- Title and Description -->
+<title>{{ if not .IsHome }}{{ .Page.Title }} - {{ end }}{{ .Site.Title }}</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="{{ with .Summary }}{{ . }}{{ else }}{{ .Site.Title }}: {{ .Title }}{{ end }}">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src=""></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+<!-- Google tag (gtag.js) -->
 
-      gtag('config', '');
-    </script>
+<!-- Favicon -->
 
-    <!-- Favicon -->
+<!-- OG image -->
+{{ with resources.GetMatch "images/og-img*" }}
+    <meta property="og:image" content="{{ .Permalink }}">
+{{ end }}
 
-    <!-- OG image -->
-    {{/* $ogImg := resources.GetMatch "images/og-img.jpg" */}}
-    <meta property="og:image" content="{{/* $ogImg.Permalink */}}">
+<!-- JS -->
+<script defer src="/js/bs.js" type="module"></script>
+<script defer src="/js/main.js"></script>
 
-    <!-- JS -->
-    <script src="/node_modules/bootstrap/dist/js/bootstrap.js"></script>
-    <script defer src="/js/main.js"></script>
-
-    <!-- Style -->
-    {{ $sass := resources.Get "scss/styles.scss" }}
-    {{ $toCssOpt := (dict "includePaths" "node_modules" "targetPath" "/assets/css/styles.css") }}
-    {{ $postCssOpt := (dict "use" "autoprefixer") }}
-    {{ $style := $sass | toCSS $toCssOpt | postCSS $postCssOpt }}
-    <link href="{{ $style.RelPermalink }}" rel="stylesheet">
-</head>
+<!-- Style -->
+{{ $sass := resources.Get "scss/styles.scss" }}
+{{ $toCssOpt := (dict "includePaths" "node_modules" "targetPath" "/assets/css/styles.css") }}
+{{ $postCssOpt := (dict "use" "autoprefixer") }}
+{{ $style := $sass | toCSS $toCssOpt | postCSS $postCssOpt }}
+{{ if hugo.IsProduction }}
+    {{ $style = $style | postCSS | minify | fingerprint | resources.PostProcess }}
+{{ end }}
+<link href="{{ $style.RelPermalink }}" rel="stylesheet">

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 {{ "<!-- layouts/_default/baseof.html -->" | safeHTML }}
 <html lang="en" data-bs-theme="dark">
-    {{ partial "head.html" . }}
+    <head>
+        {{ partial "head.html" . }}
+        {{ block "additional-head" . }}{{ end }}
+    </head>
     <body>
         {{ partial "header.html" . }}
         <main class="mb-4">
